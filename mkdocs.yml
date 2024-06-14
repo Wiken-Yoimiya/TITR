@@ -1,6 +1,8 @@
 site_name: TITR 资料库
 nav:
-  - Home: index.md
+  - 主页:
+      - Getting Started: index.md
+      - Linux: ubuntu/Ubuntu.md
 theme:
   name: material
   language: zh
