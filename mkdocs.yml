@@ -1,0 +1,5 @@
+site_name: TITR 资料库
+nav:
+  - Home: index.md
+theme:
+  name: material
