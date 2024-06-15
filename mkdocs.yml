@@ -6,6 +6,7 @@ nav:
   - 视觉:
       - Linux: ubuntu/Ubuntu.md
       - OpenCV: ubuntu/OpenCV.md
+      - Azure Kinect DK: ubuntu/Azure Kinect DK 深度相机.md
 theme:
   # 主题
   name: material
