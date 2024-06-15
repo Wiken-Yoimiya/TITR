@@ -5,6 +5,7 @@ nav:
       - 简介: index.md
   - 视觉:
       - Linux: ubuntu/Ubuntu.md
+      - OpenCV: ubuntu/OpenCV.md
 theme:
   # 主题
   name: material
