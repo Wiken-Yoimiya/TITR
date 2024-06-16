@@ -2,7 +2,7 @@
 
 [TOC]
 
-## 简介
+## 简介    ʕ •̀ ω •́ ʔ✧
 
 **OpenCV**的全称是Open Source Computer Vision Library，是一个跨平台的计算机视觉库。OpenCV是由英特尔公司发起并参与开发，以BSD许可证授权发行，可以在商业和研究领域中免费使用。
 
@@ -14,7 +14,7 @@
 
 *注：GitHub下载速度慢，使用Gitee进行下载*
 
-## Cmake安装
+## Cmake安装    (๑ ◔ ‿ ◔ ๑)
 
 *cmake官网：https://cmake.org/*
 

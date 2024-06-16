@@ -3,7 +3,7 @@ site_name: TITR 资料库
 nav:
   - 主页:
       - 简介: index.md
-  - 视觉:
+  - 环境安装:
       - Linux: ubuntu/Ubuntu.md
       - OpenCV: ubuntu/OpenCV.md
       - Azure Kinect DK: ubuntu/Azure Kinect DK 深度相机.md
