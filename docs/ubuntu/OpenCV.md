@@ -20,7 +20,11 @@
 
 *cmake镜像网站：https://cmake.org/files/*
 
+
+
 **提示：Cmake版本不要下载太高，可能会出现问题。尽量安装3.26以下**
+
+
 
 ![image-20240615181401123](img/image-20240615181401123.png)
 
@@ -44,7 +48,7 @@
 
 
 
-## 安装配置OpenCV库
+## 安装配置OpenCV库   < (￣ ︶ ￣) ↗[GO!]
 
 [OpenCV的GitHub地址](https://github.com/opencv/opencv)
 
@@ -138,6 +142,8 @@ int main() {
 }
 
 ```
+
+(＾－＾) V
 
 #### 手动编译安装
 
@@ -559,3 +565,4 @@ make         可以添加cpu核数     make -j21
 ./test
 ```
 
+( o゜▽゜) o☆[ B I N G O ! ]
