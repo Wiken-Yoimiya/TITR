@@ -1,5 +1,21 @@
 /* docs/stylesheets/extra.css */
 
+body {
+  font-family: "LXGW WenKai", sans-serif;
+  /* Lite version */
+  /* font-family: "LXGW WenKai Lite", sans-serif; */
+  /* TC version */
+  /* font-family: "LXGW WenKai TC", sans-serif; */
+  /* Screen version */
+  /* font-family: "LXGW WenKai Screen", sans-serif; */
+}
+button.md-top {
+  font-family: LXGW WenKai; /* 修改字体 */
+  font-size: 16px; /* 修改字体大小 */
+  font-weight: bold; /* 修改字体粗细 */
+  color: #518fc1; /* 修改字体颜色 */
+}
+
 /* 亮模式（默认）的标题样式 */
 body h1 {
   color: #000000; /* 字体颜色 */

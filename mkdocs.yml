@@ -7,6 +7,8 @@ nav:
       - Linux: ubuntu/Ubuntu.md
       - OpenCV: ubuntu/OpenCV.md
       - Azure Kinect DK: ubuntu/Azure Kinect DK 深度相机.md
+  - 学习资料:
+      - Git: learn/Git.md
 theme:
   # 主题
   name: material
@@ -35,13 +37,22 @@ theme:
         name: Switch to system preference
   # 标签栏设置
   features:
+    #顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.expand # 打开Tab时左侧目录全部展开
+    - navigation.top # 返回顶部的按钮 在上滑时出现
     - navigation.path
+    - search.highlight # 搜索出的文章关键词加入高亮
     # 代码复制按钮
     - content.code.copy
+
 extra_css:
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.cs
 
 extra:
   meta:

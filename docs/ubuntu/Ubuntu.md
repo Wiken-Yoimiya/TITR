@@ -309,4 +309,150 @@ sudo apt install -y 软件名
 sudo apt install ./下载的deb包包名.deb
 ```
 
+- Ubuntu中可以访问Windows下创建的磁盘，但是Windows下需要使用一些特殊手段才可以访问到Linux下的磁盘
+
+![image-20240618161115623](img/image-20240618161115623.png)
+
+- Ubuntu开机之后只有一个小横杠光标在闪烁
+
+原因：
+
+**1.系统里面存储东西太多，需要清理。**
+
+**2.Linux和驱动不兼容，需要删除驱动，重新安装**
+
+**3.显卡驱动不兼容**
+
+**4.经常进行更新导致下载了多个内核**
+
+*这里网上的解决方法很多，但是也有可能解决不了，这里提供我经常使用的方法。*
+
+当到达光标闪烁的界面时  按  Ctrl+Alt+F3  进入命令行模式。输入你创建系统时的用户名和密码（用户名为全是小写的那一个）。先尝试多次重启，
+
+```
+重启
+
+sudo reboot
+
+关机
+
+sudo poweroff       
+或
+sudo shutdown -h
+```
+
+
+
+如果多次重启还是无法进入。在 开机时选中
+
+![image-20240618165721393](img/image-20240618165721393.png)
+
+![image-20240618165735744](img/image-20240618165735744.png)
+
+![image-20240618165756257](img/image-20240618165756257.png)
+
+如果经常更新软件包，会在     
+
+![image-20240618165721393](img/image-20240618165721393.png)
+
+之后看到
+
+![image-20240618170359380](img/image-20240618170359380.png)
+
+如果有的话选择版本号较低的进入（ 后面没有括号【 upstart、recovery mode】的那几个）
+
+
+
+也可以尝试进入 命令行模式 删除显卡驱动进行尝试
+
+```
+sudo apt-get remove --purge nvidia* 
+
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+
+sudo reboot
+
+```
+
+
+
 (๑•̀ㅂ•́)و✧
+
+## Ubuntu系统的删除    （ ；´д｀ ）ゞ
+
+有时候我们安装环境失败、配置环境导致出错、显卡驱动版本不匹配、系统无法进入······等问题，又或者我们需要使用其他的Linux发行版，又或者系统存储不足，将换回Windows系统。
+
+这时候需要我们对Ubuntu系统进行删除       ( ノへ￣、)
+
+----------------
+
+删除非常简单
+
+1. 进入Windows系统
+
+2. 选中安装了Ubuntu的磁盘   右键删除卷
+
+![image-20240618161715274](img/image-20240618161715274.png)
+
+3. 删除引导 GRUB引导
+
+使用的软件为 DiskGenius
+
+官网：https://www.diskgenius.cn/
+
+![image-20240618162108525](img/image-20240618162108525.png)
+
+## 系统备份     ( ಥ﹏ಥ )
+
+我们安装好系统之后再配置环境过程中会出现很多问题，如：链接错误、配置错误、软件库无法连接、系统依赖出现问题等。这时候需要我们创建一个系统还原点。
+
+网上提供了一些解决方法，在这里使用的是Systemback
+
+**Systemback 是一个优秀的Linux系统备份还原软件。这个软件不仅能够备份还原系统，还能够把系统做成启动盘和ISO镜像，用于在其他机器上分发系统。但是作者已经放弃维护这个软件。软件也无法继续在Ubuntu 20.04运行。**
+
+幸好有大佬对它进行了开发可以在Ubuntu20.04上继续使用。感谢大佬！！！
+
+ヾ(☆▽☆)
+
+原文：https://community.bwbot.org/topic/2918/%E5%9C%A8ubuntu-20-04%E4%B8%8A%E4%BD%BF%E7%94%A8systemback
+
+- 安装步骤
+
+```
+//添加镜像源
+sudo sh -c 'echo "deb [arch=amd64] http://mirrors.bwbot.org/ stable main" > /etc/apt/sources.list.d/systemback.list'
+
+//添加秘钥
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 50B2C005A67B264F
+
+//安装
+sudo apt-get update
+sudo apt-get install systemback
+
+```
+
+- 本地安装
+
+https://www.lanzouw.com/b00taofccj
+密码:38xj
+
+*使用apt安装*
+
+```
+sudo apt install  ./systemback_1.8.9_amd64.deb
+```
+
+![image-20240618164555848](img/image-20240618164555848.png)
+
+**在终端中使用**
+
+```
+sudo systemback-cli
+```
+
+![image-20240618170730203](img/image-20240618170730203.png)
+
+按照提示输入
+
