@@ -1,0 +1,1504 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://wiken-yoimiya.github.io/TITR/ubuntu/OpenCV/">
+      
+      
+        <link rel="prev" href="../Ubuntu/">
+      
+      
+        <link rel="next" href="../Azure%20Kinect%20DK%20%E6%B7%B1%E5%BA%A6%E7%9B%B8%E6%9C%BA/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>OpenCV - TITR 资料库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opencv" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="TITR 资料库" class="md-header__button md-logo" aria-label="TITR 资料库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TITR 资料库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenCV
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  主页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Ubuntu/" class="md-tabs__link">
+          
+  
+  环境安装
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learn/Git/" class="md-tabs__link">
+          
+  
+  学习资料
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../clash%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-tabs__link">
+          
+  
+  特殊
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TITR 资料库" class="md-nav__button md-logo" aria-label="TITR 资料库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TITR 资料库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            主页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    环境安装
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            环境安装
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    OpenCV
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    OpenCV
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介 ʕ •̀ ω •́ ʔ✧
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cmake安装 (๑ ◔ ‿ ◔ ๑)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencv-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装配置OpenCV库 &lt; (￣ ︶ ￣) ↗[GO!]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装配置OpenCV库 < (￣ ︶ ￣) ↗[GO!]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      官方的预编译库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动编译安装
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu下安装
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pythonopencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python安装OpenCV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      无法下载文件
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20Kinect%20DK%20%E6%B7%B1%E5%BA%A6%E7%9B%B8%E6%9C%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Kinect DK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    学习资料
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            学习资料
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    特殊
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            特殊
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clash%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clash使用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介 ʕ •̀ ω •́ ʔ✧
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cmake安装 (๑ ◔ ‿ ◔ ๑)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencv-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装配置OpenCV库 &lt; (￣ ︶ ￣) ↗[GO!]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装配置OpenCV库 < (￣ ︶ ￣) ↗[GO!]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      官方的预编译库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动编译安装
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu下安装
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pythonopencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python安装OpenCV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      无法下载文件
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="opencv">OpenCV</h1>
+<div class="toc">
+<ul>
+<li><a href="#opencv">OpenCV</a><ul>
+<li><a href="#_1">简介 ʕ •̀ ω •́ ʔ✧</a></li>
+<li><a href="#cmake">Cmake安装 (๑ ◔ ‿ ◔ ๑)</a></li>
+<li><a href="#opencv-go">安装配置OpenCV库 &lt; (￣ ︶ ￣) ↗[GO!]</a><ul>
+<li><a href="#windows">Windows</a><ul>
+<li><a href="#_2">官方的预编译库</a></li>
+<li><a href="#_3">手动编译安装</a></li>
+</ul>
+</li>
+<li><a href="#ubuntu">Ubuntu下安装</a></li>
+<li><a href="#pythonopencv">Python安装OpenCV</a></li>
+</ul>
+</li>
+<li><a href="#_4">无法下载文件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">简介    ʕ •̀ ω •́ ʔ✧</h2>
+<p><strong>OpenCV</strong>的全称是Open Source Computer Vision Library，是一个跨平台的计算机视觉库。OpenCV是由英特尔公司发起并参与开发，以BSD许可证授权发行，可以在商业和研究领域中免费使用。</p>
+<p><strong>官方网站</strong>:https://opencv.org/</p>
+<p><strong>OpenCV拓展库</strong>：https://github.com/opencv/opencv_contrib</p>
+<p><a href="https://visualstudio.microsoft.com/zh-hans/free-developer-offers/">Visual Studio Community  |    Visual Studio Code下载地址</a></p>
+<p><em>注：GitHub下载速度慢，使用Gitee进行下载</em></p>
+<h2 id="cmake">Cmake安装    (๑ ◔ ‿ ◔ ๑)</h2>
+<p><em>cmake官网：https://cmake.org/</em></p>
+<p><em>cmake镜像网站：https://cmake.org/files/</em></p>
+<p><strong>提示：Cmake版本不要下载太高，可能会出现问题。尽量安装3.26以下</strong></p>
+<p><img alt="image-20240615181401123" src="../img/image-20240615181401123.png" /></p>
+<p><img alt="image-20240615181426799" src="../img/image-20240615181426799.png" /></p>
+<p><em>Windows的安装包为：msi 后缀</em></p>
+<p><img alt="image-20240615175419147" src="../img/image-20240615175419147.png" /></p>
+<p><img alt="image-20240615175430298" src="../img/image-20240615175430298.png" /></p>
+<p><img alt="image-20240615175452119" src="../img/image-20240615175452119.png" /></p>
+<p><strong>如果在安装时忘记添加环境变量</strong></p>
+<p><img alt="image-20240615175550595" src="../img/image-20240615175550595.png" /></p>
+<p><img alt="image-20240615175601860" src="../img/image-20240615175601860.png" /></p>
+<p><em>目录长这样：D:\Program Files\CMake\bin</em></p>
+<h2 id="opencv-go">安装配置OpenCV库   &lt; (￣ ︶ ￣) ↗[GO!]</h2>
+<p><a href="https://github.com/opencv/opencv">OpenCV的GitHub地址</a></p>
+<h3 id="windows">Windows</h3>
+<h4 id="_2">官方的预编译库</h4>
+<p><img alt="image-20240615180954122" src="../img/image-20240615180954122.png" /></p>
+<p>下载 exe后缀的文件，类似为  opencv-xxx-windows.exe、opencv-xxx-vc14_vc15.exe。这些文件为官方预编译文件可以直接用来使用</p>
+<p>使用的路径： xxx\opencv\build\x64     \vc14     或  \vc15</p>
+<table>
+<thead>
+<tr>
+<th>VS版本</th>
+<th>VC版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual Studio 6</td>
+<td>vc6</td>
+</tr>
+<tr>
+<td>Visual Studio 2003</td>
+<td>vc7</td>
+</tr>
+<tr>
+<td>Visual Studio 2005</td>
+<td>vc8</td>
+</tr>
+<tr>
+<td>Visual Studio 2008</td>
+<td>vc9</td>
+</tr>
+<tr>
+<td>Visual Studio 2010</td>
+<td>vc10</td>
+</tr>
+<tr>
+<td>Visual Studio 2012</td>
+<td>vc11</td>
+</tr>
+<tr>
+<td>Visual Studio 2013</td>
+<td>vc12</td>
+</tr>
+<tr>
+<td>Visual Studio 2015</td>
+<td>vc14</td>
+</tr>
+<tr>
+<td>Visual Studio 2017</td>
+<td>vc15</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>将    xxx\opencv\opencv\build\x64\vc15\bin    目录添加到环境变量中</li>
+</ol>
+<p><img alt="image-20240615165812352" src="../img/image-20240615165812352.png" /></p>
+<p>添加到系统环境变量和用户环境变量没有区别，当系统中存在多个用户时可以为用户设置自己的环境。</p>
+<p>当Windows系统中存在多个用户时可以单独为用户添加环境变量。</p>
+<p><strong>在Visual Studio中设置</strong></p>
+<p><img alt="image-20240615172032040" src="../img/image-20240615172032040.png" /></p>
+<ul>
+<li>
+<p>在引用目录中添加   include文件夹       xxx\opencv\build\include\opencv2      </p>
+</li>
+<li>
+<p>在库目录中添加       lib文件夹 下的对应的库   xxx\opencv\build\x64\vc15\lib    （这个地方添加的是一个具体的文件，而不是文件夹）</p>
+</li>
+</ul>
+<p><em>添加的目标文件取决于自己的项目构建类型</em></p>
+<p>opencv_worldxxx.lib    Release版本 </p>
+<p>opencv_worldxxxd.lib     Debug版本</p>
+<pre><code>//头文件
+#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;iostream&gt;
+int main() {
+    // 打开默认摄像头（通常是0）
+    cv::VideoCapture cap(0);
+    // 检查摄像头是否打开成功
+    if (!cap.isOpened()) {
+        std::cerr &lt;&lt; &quot;Error: Could not open camera.&quot; &lt;&lt; std::endl;
+        return -1;
+    }
+    // 创建一个窗口来显示视频  窗口的大小为自动
+    cv::namedWindow(&quot;Camera&quot;, cv::WINDOW_AUTOSIZE);
+    //图像的数据类型
+    cv::Mat frame;
+    while (true) {
+        // 从摄像头捕获一帧
+        cap &gt;&gt; frame;
+
+        // 检查是否成功捕获
+        if (frame.empty()) {
+            std::cerr &lt;&lt; &quot;Error: Could not capture frame.&quot; &lt;&lt; std::endl;
+            break;
+        }
+
+        // 显示捕获的帧
+        cv::imshow(&quot;Camera&quot;, frame);
+
+        // 检查用户是否按下了'q'键来退出
+        if (cv::waitKey(1) &gt;= 0 &amp;&amp; cv::waitKey(1) == 'q') {
+            break;
+        }
+    }
+
+    // 释放摄像头资源
+    cap.release();
+    // 销毁所有窗口
+    cv::destroyAllWindows();
+
+    return 0;
+}
+
+</code></pre>
+<p>(＾－＾) V</p>
+<h4 id="_3">手动编译安装</h4>
+<p><strong>注：OpenCV可以编译为32位、64位。但CUDA只支持64位。在编译带CUDA版本的OpenCV时必须选择64位</strong></p>
+<p><strong>注：编译拓展库模块之后OpenCV库全为Release模式，在使用时配置项目设置为Release模式</strong></p>
+<p>Windows可以使用MinGW、Visual Studio进行编译。在使用时必须配置为相同的编译器进行使用。</p>
+<p>在手动编译时可以添加OpenCV拓展库，拓展库中存在一些新的模块，新模块通常没有稳定的 API，并且没有经过充分测试。模块成熟并获得普及时，它将被移至中央 OpenCV 存储库。</p>
+<p>添加拓展库中主要使用的功能为CUDA加速，但是在实际使用时可以添加其他的库来进行使用。所以拓展模块不是必须。</p>
+<p>如果需要添加CUDA版本，需要使用visual studio进行编译，使用MinGW无法编译带cuda版本的opencv。   在编译之前需要先安装显卡驱动和CUDA库。</p>
+<p><strong>源码下载（自行选择版本）</strong></p>
+<ol>
+<li>Release下</li>
+</ol>
+<p><img alt="image-20240615182239692" src="../img/image-20240615182239692.png" /></p>
+<ol>
+<li></li>
+</ol>
+<p><img alt="image-20240615182432680" src="../img/image-20240615182432680.png" /></p>
+<p>使用MinGW、Visual Studio以及在Linux下进行编译时的选项都一样  只是在开始的时候选择编译器时选择相应的编译器，</p>
+<p><img alt="image-20240615182145320" src="../img/image-20240615182145320.png" /></p>
+<p>选项：</p>
+<p>-BUILD_opencv_world         <strong>不勾选</strong></p>
+<p><em>将所有的文件编译成一个包     可能会出现错误，生成多个包后面可以自己配置</em></p>
+<p>-OPENCV_GENERATE_SETUPVARS      不勾选</p>
+<p><em>用于生成一个名为opencv_setupvars.sh的脚本文件。这个脚本文件包含了设置OpenCV库环境变量的命令，可以方便地用于在终端中设置OpenCV库的环境变量。        在编译时会产生warning     环境可以自己进行配置</em></p>
+<p>-OPENCV_ENABLE_NONFREE          勾选</p>
+<p><em>开启一些有版权的算法的支持</em></p>
+<p>-ENABLE_FAST_MATH      (自行选择)</p>
+<p><em>用于启用或禁用快速数学优化。当该选项启用时，OpenCV会使用快速数学优化指令（如SSE、AVX等）来加速数学计算，从而提高程序的性能。但是需要注意的是，快速数学优化可能会引入一些精度损失，因此在一些对精度要求较高的应用场景下可能需要谨慎使用。</em></p>
+<p>-搜索  test        全部取消勾选</p>
+<p><em>测试文件  不需要编译</em></p>
+<p>-BUILD_opencv_python3        取消勾选</p>
+<p>-BUILD_opencv_python_bindings_generator     取消勾选</p>
+<p><em>与python相关的库      在python下可以直接使用指令来下载对应的python</em></p>
+<p>-BUILD_JAVA       取消勾选</p>
+<p>-BUILD_opencv_java_bindings_generator    取消勾选</p>
+<p><em>与JAVA相关的库      同上</em></p>
+<p>-BUILD-opencv_js     取消勾选</p>
+<p>-BUILD_opencv_js_bindings_generator     取消勾选</p>
+<p><em>与JavaScript相关的库</em></p>
+<p>可选项-BUILD_opencv_highgui</p>
+<p><em>OpenCV的高级图形用户界面模块。在使用imshow时显示图像像素的位置，以及其他的工具</em></p>
+<hr />
+<p><strong>添加拓展模块</strong></p>
+<p>-OPENCV_EXTRA_MODULES_PATH      填写拓展库的路径  下的modules</p>
+<p><em>拓展库的路径</em></p>
+<p>-BUILD_opencv_xfeatures2d        取消勾选（如果可以下载也可以不取消）</p>
+<p>-BUILD_opencv_wechat_qrcode       必须取消勾选</p>
+<p>-BUILD_opencv_face       取消勾选（可以下载的话可以不取消)</p>
+<p>-BUILD_SHARED_LIBS     指定是否要构建共享库（动态链接库）</p>
+<p><strong>CUDA加速</strong></p>
+<p><em>注：在编译CUDA加速时需要配置两次</em></p>
+<p>搜索“cuda”，</p>
+<p>勾选 BUILD_CUDA_STUBS、OPENCV_DNN_CUDA、WITH_CUDA</p>
+<p><strong>第一次点击Configure</strong></p>
+<p>勾选 CUDA_FAST_MATH</p>
+<hr />
+<p>当BUILD_SHARED_LIBS被设置为ON时，OpenCV将会被编译成为动态库 dll（Windows下）、so（Linux下）</p>
+<p>当BUILD_SHARED_LIBS被设置为OFF时OpenCV将会被编译成为静态库 lib(msvc)、a(MinGW)</p>
+<p><em>点击Configure之后查看输出栏是否存在 红色 错误 。如果无错误则点击Generate</em></p>
+<ul>
+<li>当编译器为MinGW时</li>
+</ul>
+<pre><code>打开  配置时选择的文件夹   使用终端打开
+
+-j21 设置为cpu核数   21为自己的电脑cpu核数  根据自己的设备配置
+mingw32-make    -j21 
+#进行编译
+</code></pre>
+<p><img alt="image-20240615200120670" src="../img/image-20240615200120670.png" /></p>
+<pre><code>安装
+
+mingw32-make install 
+</code></pre>
+<p><img alt="image-20240615200159363" src="../img/image-20240615200159363.png" /></p>
+<pre><code>配置时指定的路径 D:\opencv-4.6\opencv4.6_MinGW  
+
+最终安装好的文件   在install下
+</code></pre>
+<p><img alt="image-20240615200625940" src="../img/image-20240615200625940.png" /></p>
+<ul>
+<li>当编译器为Visual Studio</li>
+</ul>
+<p>打开指定的路径下的       OpenCV.sln</p>
+<p><img alt="image-20240615200816357" src="../img/image-20240615200816357.png" /></p>
+<p><img alt="image-20240615202348977" src="../img/image-20240615202348977.png" /></p>
+<p>！！！ 如果添加了拓展模块    必须设置为     Release</p>
+<p><em>以下都在CMake Targets 中</em></p>
+<ol>
+<li>选择 All_BUILD    右键生成     等待完成      </li>
+<li>选择 INSTALL       右键生成</li>
+</ol>
+<p><strong>最终生成在目录下      install     内</strong></p>
+<h3 id="ubuntu">Ubuntu下安装</h3>
+<p><em>可以使用cmake-qt-gui进行配置，也可以使用cmake参数进行配置</em></p>
+<p>需要的工具</p>
+<pre><code>sudo apt-get install -y gcc g++ cmake make cmake-qt-gui
+</code></pre>
+<p>依赖库</p>
+<pre><code>sudo apt-get install -y build-essential libgtk2.0-dev libgtk-3-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev libeigen3-dev
+
+sudo apt-get install -y libjpeg-dev libpng-dev  libtiff-dev  libavcodec-dev libavformat-dev  libswscale-dev libv4l-dev  libxvidcore-dev  libx264-dev  libgtk-3-dev  libatlas-base-dev  gfortran libgflags-dev libgoogle-glog-dev
+</code></pre>
+<p><img alt="image-20240615203433416" src="../img/image-20240615203433416.png" /></p>
+<p>配置目录      编译器选择默认</p>
+<p><em>需要添加参数</em></p>
+<p>-OPENCV_GENERATE_PKGCONFIG   </p>
+<p><em>生成一个pkg-config的路径使得pkgconfig能够自动传递库路径给g++进行编译</em></p>
+<p><em>如果需要配置CUDA，需要先在系统中安装NVIDIA驱动以及CUDA库</em></p>
+<p><strong>其他配置同上</strong></p>
+<p><img alt="image-20240615204100108" src="../img/image-20240615204100108.png" /></p>
+<ol>
+<li>配置完成  点击Configure      等待完成</li>
+<li>Configure 完成之后查看消息框中是否存在错误，无错误之后点击Generate</li>
+</ol>
+<pre><code>最终输出为
+Configuring done
+Generating done
+</code></pre>
+<p><img alt="image-20240615205811960" src="../img/image-20240615205811960.png" /></p>
+<p>打开设置的文件夹     终端中打开</p>
+<pre><code>开始编译
+-j21 设置为cpu核数   21为自己的电脑cpu核数  根据自己的设备配置
+
+make -j21
+</code></pre>
+<p>安装</p>
+<pre><code>sudo make install
+</code></pre>
+<p>配置pkg-config环境</p>
+<pre><code>opencv4.pc文件路径：/usr/local/lib/pkgconfig/opencv4.pc
+
+======
+使用  sudo find / -iname opencv4.pc    查找
+
+</code></pre>
+<pre><code>将路径加入到PKG_CONFIG_PATH（用vim或gedit打开）：
+sudo vim /etc/profile.d/pkgconfig.sh    
+或
+sudo gedit /etc/profile.d/pkgconfig.sh
+添加：
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+</code></pre>
+<pre><code>=======================
+# 激活
+source /etc/profile
+========================
+验证：
+pkg-config --libs opencv4
+========================
+</code></pre>
+<p>配置动态库环境</p>
+<pre><code>sudo vim /etc/ld.so.conf.d/opencv4.conf
+
+或
+
+sudo gedit /etc/ld.so.conf.d/opencv4.conf
+添加：
+
+/usr/local/lib
+
+
+===================
+使路径生效：
+sudo ldconfig
+
+</code></pre>
+<p><strong>使用参数进行配置</strong></p>
+<p><em>说明：使用参数配置，其实就是直接在终端中配置opencv，参数其实就是在桌面版cmake中看见的参数，在每一个参数钱加 -D，选项中勾选为NO，取消勾选为OFF。</em></p>
+<pre><code>===
+下面给的参数为添加了拓展库和CUDA加速的版本。可以根据自己的需求自行添加或者修改参数
+===
+
+ cmake \
+ -D OPENCV_GENERATE_PKGCONFIG=ON \
+ -D BUILD_CUDA_STUBS=ON \
+ -D OPENCV_DNN_CUDA=ON \
+ -D WITH_CUDA=ON \
+ -D OPENCV_ENABLE_NONFREE=ON \
+ -D BUILD_PERF_TESTS=OFF \
+ -D BUILD_TESTS=OFF \
+ -D BUILD_opencv_python_tests=OFF \
+ -D INSTALL_TESTS=OFF \
+ -D OPENCV_EXTRA_MODULES_PATH=拓展库的路径 \
+-D CUDA_FAST_MATH=ON \
+-D BUILD_opencv_python3=OFF \
+-D BUILD_opencv_python_bindings_generator=OFF \
+-D BUILD_JAVA=OFF \
+-D BUILD_opencv_java_bindings_generator=OFF \
+-D BUILD_opencv_js=OFF \
+-D BUILD_opencv_js_bindings_generator=OFF \
+-D BUILD_opencv_xfeatures2d=OFF \
+-D BUILD_opencv_wechat_qrcode=OFF \
+-D BUILD_opencv_face=OFF \
+/home/titr/opencv(安装的路径)
+
+
+等待完成之后进行安装的路径
+
+编译--》安装--》配置pkg-config环境--》配置动态库环境
+</code></pre>
+<hr />
+<p><strong>测试</strong></p>
+<p>新建文件夹</p>
+<pre><code>mkdir test
+进入
+cd test
+</code></pre>
+<p>编写CMakeLists.txt文件</p>
+<pre><code>vim CMakeLists.txt    
+或
+gedit CMakeLists.txt  
+===================
+cmake_minimum_required(VERSION 3.10)
+
+# 项目名称
+project(test)
+
+# 设置C++标准
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# 查找OpenCV包
+find_package(OpenCV REQUIRED)
+
+# 添加可执行文件
+add_executable(test main.cpp)
+
+# 链接OpenCV库
+target_link_libraries(test ${OpenCV_LIBS})
+
+===================
+
+保存+退出 
+
+</code></pre>
+<p>main.cpp</p>
+<pre><code>vim main.cpp
+或
+gedit main.cpp
+================
+//头文件
+#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;iostream&gt;
+int main() {
+    // 打开默认摄像头（通常是0）
+    cv::VideoCapture cap(0);
+    // 检查摄像头是否打开成功
+    if (!cap.isOpened()) {
+        std::cerr &lt;&lt; &quot;Error: Could not open camera.&quot; &lt;&lt; std::endl;
+        return -1;
+    }
+    // 创建一个窗口来显示视频  窗口的大小为自动
+    cv::namedWindow(&quot;Camera&quot;, cv::WINDOW_AUTOSIZE);
+    //图像的数据类型
+    cv::Mat frame;
+    while (true) {
+        // 从摄像头捕获一帧
+        cap &gt;&gt; frame;
+
+        // 检查是否成功捕获
+        if (frame.empty()) {
+            std::cerr &lt;&lt; &quot;Error: Could not capture frame.&quot; &lt;&lt; std::endl;
+            break;
+        }
+
+        // 显示捕获的帧
+        cv::imshow(&quot;Camera&quot;, frame);
+
+        // 检查用户是否按下了'q'键来退出
+        if (cv::waitKey(1) &gt;= 0 &amp;&amp; cv::waitKey(1) == 'q') {
+            break;
+        }
+    }
+
+    // 释放摄像头资源
+    cap.release();
+    // 销毁所有窗口
+    cv::destroyAllWindows();
+
+    return 0;
+}
+
+</code></pre>
+<p>进入项目目录</p>
+<pre><code>创建 build 目录   并进入
+
+mkdir build
+
+cd  build
+=====================
+
+构建项目
+
+cmake ..
+
+======================
+
+编译项目
+make         可以添加cpu核数     make -j21
+
+======================
+
+运行
+./test
+</code></pre>
+<h3 id="pythonopencv">Python安装OpenCV</h3>
+<p>在Python中可以直接使用pip指令进行下载， 在Windows和Linux下的用法都一样。</p>
+<p><em>注：Python版本中可能存在差异，我们可以安装Anaconda来进行Python的管理。使用Anaconda可以在我们的电脑中同时安装多个不同版本的Python。</em></p>
+<p>——》 Anaconda的安装配置和使用（还没写）</p>
+<ol>
+<li>使用pip命令查看所有的opencv版本</li>
+</ol>
+<pre><code>pip search opencv-python
+</code></pre>
+<ol>
+<li>安装opencv的python版本</li>
+</ol>
+<pre><code>pip install opencv-python
+</code></pre>
+<p><em>注：直接使用上方的pip安装命令会直接下载到opencv的最新版本。</em></p>
+<ul>
+<li>安装特定版本的opencv</li>
+</ul>
+<pre><code>pip install opencv-python==&lt;版本号&gt;   
+</code></pre>
+<ol>
+<li>下载时添加镜像源</li>
+</ol>
+<p><em>可以直接修改python全部的镜像源，但那样的话有些软件包可能存在问题。所以我们只需要在下载时配置软件源即可</em></p>
+<p>添加镜像源的方式不止下载opencv时可以使用，在下载其他的软件包时可以使用</p>
+<pre><code>pip install opencv-python -i https://镜像源地址
+</code></pre>
+<p>（ o゜▽゜) o☆[ B I N G O ! ]</p>
+<h2 id="_4">无法下载文件</h2>
+<p><em>在我们进行cmake时，由于网络原因无法下载一些文件，我们可以找一些方法来下载这些文件</em></p>
+<ul>
+<li>
+<p>进行配置网络环境：<a href="../clash%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">网络环境配置</a></p>
+</li>
+<li>
+<p>修改cmake配置文件</p>
+</li>
+</ul>
+<p>修改对应的文件下的下载地址</p>
+<p>添加镜像下载地址</p>
+<pre><code>https://raw.githubusercontent.com/opencv/ xxxxxxxx
+
+为
+
+https://raw.githubusercontent.com/https://raw.githubusercontent.com/opencv/ xxxxxxxx
+</code></pre>
+<ol>
+<li>IPPICV 下载失败</li>
+</ol>
+<p><img alt="image-20240619225427918" src="../img/image-20240619225427918.png" /></p>
+<p>打开opencv源码下/source/3rdparty/ippicv</p>
+<p><img alt="image-20240619225608249" src="../img/image-20240619225608249.png" /></p>
+<ol>
+<li>ffmpeg下载失败</li>
+</ol>
+<p><img alt="image-20240619230237454" src="../img/image-20240619230237454.png" /></p>
+<p><img alt="image-20240619230302177" src="../img/image-20240619230302177.png" /></p>
+<p>opencv源码目录\sources\3rdparty\ffmpeg目录</p>
+<p><img alt="image-20240619230417170" src="../img/image-20240619230417170.png" /></p>
+<hr />
+<p>拓展库</p>
+<ol>
+<li>boostdesc_bgm.i相关文件下载失败</li>
+</ol>
+<p>opencv_contrib拓展库\modules\xfeatures2d\cmake</p>
+<p><img alt="image-20240619230640497" src="../img/image-20240619230640497.png" /></p>
+<ol>
+<li>vgg_generated_120.i相关文件下载失败</li>
+</ol>
+<p>opencv_contrib拓展库\modules\xfeatures2d\cmake</p>
+<p><img alt="image-20240619230718233" src="../img/image-20240619230718233.png" /></p>
+<ol>
+<li>face_landmark_model.dat下载失败</li>
+</ol>
+<p>opencv_contrib拓展库\modules\face\CMakeLists.txt</p>
+<p><img alt="image-20240619230836041" src="../img/image-20240619230836041.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.path", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>
