@@ -300,7 +300,7 @@ mingw32-make install
 
 **最终生成在目录下      install     内**
 
-#### Ubuntu下安装
+### Ubuntu下安装
 
 *可以使用cmake-qt-gui进行配置，也可以使用cmake参数进行配置*
 
@@ -565,4 +565,106 @@ make         可以添加cpu核数     make -j21
 ./test
 ```
 
-( o゜▽゜) o☆[ B I N G O ! ]
+### Python安装OpenCV
+
+在Python中可以直接使用pip指令进行下载， 在Windows和Linux下的用法都一样。
+
+*注：Python版本中可能存在差异，我们可以安装Anaconda来进行Python的管理。使用Anaconda可以在我们的电脑中同时安装多个不同版本的Python。*
+
+——》 Anaconda的安装配置和使用（还没写）
+
+1. 使用pip命令查看所有的opencv版本
+
+```
+pip search opencv-python
+```
+
+2. 安装opencv的python版本
+
+```
+pip install opencv-python
+```
+
+*注：直接使用上方的pip安装命令会直接下载到opencv的最新版本。*
+
+- 安装特定版本的opencv
+
+```
+pip install opencv-python==<版本号>   
+```
+
+3. 下载时添加镜像源
+
+*可以直接修改python全部的镜像源，但那样的话有些软件包可能存在问题。所以我们只需要在下载时配置软件源即可*
+
+添加镜像源的方式不止下载opencv时可以使用，在下载其他的软件包时可以使用
+
+```
+pip install opencv-python -i https://镜像源地址
+```
+
+
+
+（ o゜▽゜) o☆[ B I N G O ! ]
+
+## 无法下载文件
+
+*在我们进行cmake时，由于网络原因无法下载一些文件，我们可以找一些方法来下载这些文件*
+
+- 进行配置网络环境：[网络环境配置](clash使用教程.md)
+
+- 修改cmake配置文件
+
+修改对应的文件下的下载地址
+
+添加镜像下载地址
+
+```
+https://raw.githubusercontent.com/opencv/ xxxxxxxx
+
+为
+
+https://raw.githubusercontent.com/https://raw.githubusercontent.com/opencv/ xxxxxxxx
+```
+
+
+
+1. IPPICV 下载失败
+
+![image-20240619225427918](img/image-20240619225427918.png)
+
+打开opencv源码下/source/3rdparty/ippicv
+
+![image-20240619225608249](img/image-20240619225608249.png)
+
+2. ffmpeg下载失败
+
+![image-20240619230237454](img/image-20240619230237454.png)
+
+![image-20240619230302177](img/image-20240619230302177.png)
+
+opencv源码目录\sources\3rdparty\ffmpeg目录
+
+![image-20240619230417170](img/image-20240619230417170.png)
+
+---
+
+拓展库
+
+3. boostdesc_bgm.i相关文件下载失败
+
+opencv_contrib拓展库\modules\xfeatures2d\cmake
+
+![image-20240619230640497](img/image-20240619230640497.png)
+
+4. vgg_generated_120.i相关文件下载失败
+
+opencv_contrib拓展库\modules\xfeatures2d\cmake
+
+![image-20240619230718233](img/image-20240619230718233.png)
+
+5. face_landmark_model.dat下载失败
+
+opencv_contrib拓展库\modules\face\CMakeLists.txt
+
+![image-20240619230836041](img/image-20240619230836041.png)
